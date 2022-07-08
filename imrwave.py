@@ -1,4 +1,4 @@
-""" Reverse chirping waveform model using IMRPhenomD as a a base
+""" Reverse chirping waveform model using IMRPhenomXPHM as a a base
 """
 from scipy import signal
 from scipy.interpolate import interp1d
@@ -13,7 +13,7 @@ def fd(taper_start=None, taper_end=None, **kwds):
 
     if 'approximant' in kwds:
         kwds.pop("approximant")
-    hp, hc = get_fd_waveform(approximant="TaylorF2", **kwds)
+    hp, hc = get_fd_waveform(approximant="IMRPhenomXPHM", **kwds)
 
     if taper_start:
         hp = fd_taper(hp, flow, flow + taper_start, side='left')
@@ -40,7 +40,7 @@ def fd_sequence(taper_start=None, taper_end=None, **kwds):
 
     if 'approximant' in kwds:
         kwds.pop("approximant")
-    hp, hc = get_fd_waveform_sequence(approximant="TaylorF2", **kwds)
+    hp, hc = get_fd_waveform_sequence(approximant="IMRPhenomXPHM", **kwds)
 
     sam = kwds['sample_points'].numpy()
     flow = sam[0]

@@ -17,8 +17,8 @@ setup (
     keywords = ['pycbc', 'signal processing', 'gravitational waves'],
     install_requires = ['pycbc'],
     py_modules = ['mywave'],
-    entry_points = {"pycbc.waveform.fd_sequence":"taperf2 = mywave:fd_sequence",
-                    "pycbc.waveform.fd":"taperf2 = mywave:fd"},
+    entry_points = {"pycbc.waveform.fd_sequence":"imr = imrwave:fd_sequence",
+                    "pycbc.waveform.fd":"imr = imrwave:fd"},
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
